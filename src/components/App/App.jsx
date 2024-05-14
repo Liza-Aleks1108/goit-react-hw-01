@@ -1,17 +1,12 @@
-import './App.css'
+import './App.css';
 import Profile from '../Profile/Profile.jsx';
+import FriendList from '../FriendList/FriendList.jsx';
+import TransactionHistory from '../TransactionHistory/TransactionHistory.jsx';
 
-const userData = {
-  username: "Jacques Gluke",
-  tag: "jgluke",
-  location: "Ocho Rios, Jamaica",
-  avatar: "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
-  stats: {
-    followers: 5603,
-    views: 4827,
-    likes: 1308
-  }
-};
+import friends from '../FriendList/friends.json';
+import userData from '../Profile/userData.json';
+import transactions from '../TransactionHistory/TransactionHistory.json';
+
 const App = () => {
   return (
     <>
@@ -22,8 +17,10 @@ const App = () => {
         image={userData.avatar}
         stats={userData.stats}
       />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </>
   );
 };
 
-export default App
+export default App;
